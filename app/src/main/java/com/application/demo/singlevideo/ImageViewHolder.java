@@ -1,4 +1,4 @@
-package com.application.demo.singleimage;
+package com.application.demo.singlevideo;
 
 import android.util.Log;
 import android.view.View;
@@ -20,7 +20,7 @@ class ImageViewHolder extends RecyclerView.ViewHolder {
             Object tag = imageView.getTag();
             Log.d("ImageViewHolder", "ImageViewHolder: tag = " + tag + "   listener = " + listener);
             if (tag != null && listener != null) {
-                listener.onClick((MediaStoreImage) tag);
+                listener.onClick((VideoInfo) tag);
             }
         });
     }

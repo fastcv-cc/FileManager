@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.DiffUtil;
 
 import java.util.Date;
 
-public class MediaStoreImage {
+class MediaStoreImage {
 
     public long id;
     public String displayName;

@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.application.demo">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="30" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="30"  />
     <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
@@ -34,6 +36,8 @@
         <activity android:name=".filemanager.FileManagerActivity" />
         <activity android:name=".singleimage.SelectSingleImageActivity" />
         <activity android:name=".singleimage.CustomSingleImageSelectActivity" />
+        <activity android:name=".singlevideo.SelectSingleVideoActivity" />
+        <activity android:name=".singlevideo.CustomSingleVideoSelectActivity" />
 
         <provider
             android:name="androidx.core.content.FileProvider"

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <VideoView
+        android:id="@+id/vv_show"
+        android:layout_width="wrap_content"
+        android:layout_height="300dp"
+        android:layout_gravity="center_horizontal"
+        android:scaleType="fitCenter" />
+
+    <Button
+        android:id="@+id/btCaptureVideo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="拍摄" />
+
+    <Button
+        android:id="@+id/btSystemGallery"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="系统相册" />
+
+    <Button
+        android:id="@+id/btCustomGallery"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="自定义选择视频" />
+
+</LinearLayout>

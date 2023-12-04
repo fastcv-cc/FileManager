@@ -1,7 +1,8 @@
-package com.application.demo.singleimage;
+package com.application.demo.singlevideo;
 
 import android.graphics.Bitmap;
 import android.os.Build;
+import android.util.Log;
 import android.util.Size;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,12 +15,12 @@ import com.application.demo.R;
 
 import java.io.IOException;
 
-class GalleryAdapter extends ListAdapter<MediaStoreImage, ImageViewHolder> {
+class GalleryAdapter extends ListAdapter<VideoInfo, ImageViewHolder> {
 
     private final OnGalleryClickListener listener;
 
     protected GalleryAdapter(OnGalleryClickListener listener) {
-        super(MediaStoreImage.DiffCallback);
+        super(VideoInfo.DiffCallback);
         this.listener = listener;
     }
 
@@ -32,14 +33,14 @@ class GalleryAdapter extends ListAdapter<MediaStoreImage, ImageViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ImageViewHolder holder, int position) {
-        MediaStoreImage mediaStoreImage = getItem(position);
-        holder.imageView.setTag(mediaStoreImage);
+        VideoInfo videoInfo = getItem(position);
+        holder.imageView.setTag(videoInfo);
 
         Bitmap thumbnail;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
             try {
                 thumbnail = holder.itemView.getContext().getContentResolver().loadThumbnail(
-                        mediaStoreImage.contentUri, new Size(640, 480), null);
+                        videoInfo.localPathUri, new Size(640, 480), null);
             } catch (IOException e) {
                 e.printStackTrace();
                 thumbnail = null;
@@ -47,9 +48,11 @@ class GalleryAdapter extends ListAdapter<MediaStoreImage, ImageViewHolder> {
         } else {
             thumbnail = null;
         }
+
+        Log.d("xcl_debug", "onBindViewHolder: 再次获取");
+
         if (thumbnail == null) {
-            holder.imageView.setImageURI(null);
-            holder.imageView.setImageURI(mediaStoreImage.contentUri);
+            holder.imageView.setImageBitmap(videoInfo.firstFrame);
         } else {
             holder.imageView.setImageBitmap(thumbnail);
         }

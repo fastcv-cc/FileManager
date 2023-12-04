@@ -31,21 +31,9 @@
         android:text="选择单张图片" />
 
     <Button
-        android:id="@+id/bt_image"
+        android:id="@+id/bt_select_single_video"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="选择照片" />
-
-    <Button
-        android:id="@+id/bt_video"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="选择视频" />
-
-    <Button
-        android:id="@+id/bt_media_type"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="选择特定媒体类型" />
+        android:text="选择单个视频" />
 
 </LinearLayout>
