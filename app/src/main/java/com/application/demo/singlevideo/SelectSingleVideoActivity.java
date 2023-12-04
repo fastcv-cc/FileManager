@@ -5,6 +5,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.widget.VideoView;
 
 import androidx.activity.result.ActivityResultLauncher;
@@ -36,8 +37,10 @@ public class SelectSingleVideoActivity extends AppCompatActivity {
                     new File(getExternalCacheDir(), "video.mp4")
             );
         } else {
-            uri = Uri.fromFile(new File(getExternalCacheDir(), "avatar.png"));
+            uri = Uri.fromFile(new File(getExternalCacheDir(), "video.mp4"));
         }
+
+        Log.d("xcl_debug", "onCreate: uri = " + uri.toString());
 
         VideoView videoView = findViewById(R.id.vv_show);
 

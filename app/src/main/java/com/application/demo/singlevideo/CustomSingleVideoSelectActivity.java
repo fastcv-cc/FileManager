@@ -126,9 +126,9 @@ public class CustomSingleVideoSelectActivity extends AppCompatActivity {
             videoInfo.localPathUri = ContentUris.withAppendedId(MediaStore.Video.Media.EXTERNAL_CONTENT_URI, Long.parseLong(videoInfo.mediaId));
             videoInfo.fileName = cursor.getString(cursor.getColumnIndex(MediaStore.Video.Media.DISPLAY_NAME));
             videoInfo.mimeType = cursor.getString(cursor.getColumnIndex(MediaStore.Video.Media.MIME_TYPE));
-            long startTime = System.currentTimeMillis();
-            videoInfo.firstFrame = getVideoThumbnail(videoInfo.localPathUri);
-            Log.d(TAG, "queryVideos:duration =  " + (System.currentTimeMillis() - startTime));
+//            long startTime = System.currentTimeMillis();
+//            videoInfo.firstFrame = getVideoThumbnail(videoInfo.localPathUri);
+//            Log.d(TAG, "queryVideos:duration =  " + (System.currentTimeMillis() - startTime));
             videoInfo.duration = cursor.getLong(cursor.getColumnIndex(MediaStore.Video.Media.DURATION));
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
                 videoInfo.biteRate = cursor.getLong(cursor.getColumnIndex(MediaStore.Video.Media.BITRATE));

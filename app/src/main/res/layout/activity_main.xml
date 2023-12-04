@@ -25,6 +25,12 @@
         android:text="访问外部存储公共目录" />
 
     <Button
+        android:id="@+id/bt_saf"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SAF" />
+
+    <Button
         android:id="@+id/bt_select_single_image"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

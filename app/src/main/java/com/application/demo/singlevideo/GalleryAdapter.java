@@ -49,11 +49,11 @@ class GalleryAdapter extends ListAdapter<VideoInfo, ImageViewHolder> {
             thumbnail = null;
         }
 
-        Log.d("xcl_debug", "onBindViewHolder: 再次获取");
-
         if (thumbnail == null) {
-            holder.imageView.setImageBitmap(videoInfo.firstFrame);
-        } else {
+            Log.d("xcl_debug", "onBindViewHolder: 再次获取");
+        }
+
+        if (thumbnail != null) {
             holder.imageView.setImageBitmap(thumbnail);
         }
     }
